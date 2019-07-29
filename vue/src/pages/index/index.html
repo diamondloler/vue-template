@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes"><!-- 删除苹果默认的工具栏和菜单栏 -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"><!-- 设置苹果工具栏颜色 -->
+		<meta name="format-detection" content="telphone=no, email=no"><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+	 	<meta http-equiv="Window-target" content="_top">
+		<meta name="keywords" content="标记内容太短，则搜索引擎可能不会认为这些内容相关。另外标记不应超过 874 个字符">
+		<meta name="description" content="不超过150个字符">
+		<title>webpack-vue模板</title>
+		<% if(category == 'h5') { %>
+		<script src="//a.msstatic.com/huya/hd/cdn_libs/flexible2.js"></script>
+		<% } %>
+		<!--[if gt IE 8]><!-->
+		<script src="https://a.msstatic.com/huya/hd/cdn_libs/polyfill_promise.js" crossorigin="anonymous"></script>
+		<script src="https://a.msstatic.com/huya/hd/cdn_libs/error_report.js" crossorigin="anonymous"></script>
+		<!--<![endif]-->
+		<% if(huyaHeaderFooter) { %>
+		<style type="text/css"> body {padding-top: 50px } </style>
+		<% } %>
+		<script>
+			window.performanceInfo = {
+				_hmt: [],
+				whiteScreenTime: +new Date(),
+				firstScreenTime: 0,
+				reportFirstScreenTime: function() {
+					window.performanceInfo.firstScreenTime = +new Date();
+					try{
+						window.HUYASdk && HUYASdk.eventReport({
+							event: {
+								timestamp: Date.now(),
+								status: '0',
+								code: '200',
+								targetName: 'pageLoadSuccess'
+							}
+						});
+					}catch(e){
+		
+					}
+				}
+			};
+			/*<prod>*/
+				(function() {
+					var report = document.createElement("script");
+					// 一小时自更新一次
+					var date = new Date;
+						date.setMinutes(0);
+						date.setSeconds(0);
+						date.setMilliseconds(0);
+						date = date.getTime();
+					report.src = 'https://a.msstatic.com/huya/hd/cdn_libs/performance_report-min.js?version=' + date;
+					var s = document.getElementsByTagName("script")[0];
+					s.parentNode.insertBefore(report, s);
+				})();
+			/*</prod>*/		
+	   </script> 
+	</head>
+	<body>
+	<!--[if lt IE 10]><div style="z-index:1000;position:absolute;top:0;width:100%;height:30px;line-height:30px;text-align:center;background-color:#cec9c9;color:#f00; font-size: 14px">您的浏览器版本过低，导致页面部分功能不能正常使用，建议您使用chrome浏览器。</div><![endif]-->
+	<div id="huya-vue-app">
+
+	</div>
+
+	<% if(huyaHeaderFooter) { %>
+	<script src="//a.msstatic.com/huya/hd/cdn_libs/jquery2_mod_ud.js"></script>
+	<script src="//a.msstatic.com/huya/common/header_lg.js"></script>
+	<% } %>
+	
+	</body>
+	<% if(huyaHeaderFooter) { %>
+	<script src="//a.msstatic.com/huya/common/footer.js"></script>
+	<% } %>
+</html>
+
